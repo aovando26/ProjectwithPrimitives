@@ -15,6 +15,6 @@ public class EnemyMove : MonoBehaviour
     void Update()
     {
         // can use Vector3.forwward for (0,0,1) then scaled with speedMovement  * Time.deltaTime
-        transform.Translate(0, 0, speedMovement * Time.deltaTime);
+        transform.Translate(Vector3.back * speedMovement * Time.deltaTime);
     }
 }

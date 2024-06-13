@@ -6,8 +6,8 @@ public class SpawnManager : MonoBehaviour
 {
     public GameObject enemyPrefab;
 
-    private int intervalOfZ = 20;
-    private int spawnPosZ = 10; 
+    private int intervalOfX = 20;
+    private int spawnPosZ = 20; 
     private float randomX;
     private float startDelay = 2.0f;
     private float spawnInterval = 1.5f; 
@@ -26,11 +26,10 @@ public class SpawnManager : MonoBehaviour
 
     void EnemySpawn()
     {
-        int randomX = Random.Range(-intervalOfZ, intervalOfZ);
+        int randomX = Random.Range(-intervalOfX, intervalOfX);
 
         Vector3 posPrefab = new Vector3(randomX, 1, spawnPosZ);
 
         Instantiate(enemyPrefab, posPrefab, enemyPrefab.transform.rotation);
-
     }
 }
