@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro; 
 
 public class ScoreManager : MonoBehaviour
 {
     public static ScoreManager instance;
     private int score = 0;
+    public TextMeshProUGUI scoreText;
 
     void Start()
     {
@@ -24,5 +26,6 @@ public class ScoreManager : MonoBehaviour
     {
         score = score + value;
         Debug.Log("Target has been hit " + score);
+        scoreText.text = score.ToString();
     }
 }
