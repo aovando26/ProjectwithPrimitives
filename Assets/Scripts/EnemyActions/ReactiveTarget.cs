@@ -4,10 +4,19 @@ using UnityEngine;
 
 public class ReactiveTarget : MonoBehaviour
 {
+    private AudioSource audioSource;
+
     // Start is called before the first frame update
     void Start()
     {
-
+        if (audioSource != null)
+        {
+            audioSource = GetComponent<AudioSource>();
+        }
+        else
+        { 
+            audioSource = GetComponent<AudioSource>();
+        }
     }
 
     // Update is called once per frame
@@ -18,6 +27,7 @@ public class ReactiveTarget : MonoBehaviour
 
     public void ReactToHit()
     {
+        audioSource.Play();
         StartCoroutine(Die());
     }
 
